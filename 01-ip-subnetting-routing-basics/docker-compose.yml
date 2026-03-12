@@ -1,0 +1,21 @@
+networks:
+  lana:
+    ipam:
+      config:
+        - subnet: 10.10.0.0/26
+  lanb: 
+    ipam:
+      config:
+        - subnet: 10.10.0.64/27
+  lanc: 
+    ipam:
+      config:
+        - subnet: 10.10.0.96/28
+  r1_r2: 
+    ipam:
+      config:
+        - subnet: 10.10.0.112/30
+  r2_r3: 
+    ipam:
+      config:
+        - subnet: 10.10.0.116/30

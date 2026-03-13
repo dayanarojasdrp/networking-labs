@@ -19,3 +19,48 @@ networks:
     ipam:
       config:
         - subnet: 10.10.0.116/30
+services:
+  r1:
+    image: frrouting/frr:latest
+    container_name: r1
+    networks:
+      lana:
+        ipv4_address: 10.10.0.1
+      r1_r2:
+        ipv4_address: 10.10.0.113
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./configs/r1:/etc/frr
+
+  r2:
+    image: frrouting/frr:latest
+    container_name: r2
+    networks:
+      lanb:
+        ipv4_address: 10.10.0.65
+      r1_r2:
+        ipv4_address: 10.10.0.114
+      r2_r3:
+        ipv4_address: 10.10.0.117
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./configs/r2:/etc/frr
+
+  r3:
+    image: frrouting/frr:latest
+    container_name: r3
+    networks:
+      lanc:
+        ipv4_address: 10.10.0.97
+      r2_r3:
+        ipv4_address: 10.10.0.118
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./configs/r3:/etc/frr
+

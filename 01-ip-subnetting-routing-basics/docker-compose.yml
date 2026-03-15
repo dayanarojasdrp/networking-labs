@@ -21,9 +21,11 @@ networks:
         - subnet: 172.20.0.128/29
 services:
   r1:
-    image: frrouting/frr:latest
-    platform: linux/arm64 
+    image: arm64v8/ubuntu:22.04
+    platform: linux/arm64
     container_name: r1
+    privileged: true
+    command: tail -f /dev/null
     networks:
       lana:
         ipv4_address: 172.20.0.2
@@ -32,15 +34,15 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
-      - SYS_ADMIN
-      - SYS_MODULE  
     volumes:
       - ./configs/r1:/etc/frr
 
   r2:
-    image: frrouting/frr:latest
-    platform: linux/arm64 
+    image: arm64v8/ubuntu:22.04
+    platform: linux/arm64
     container_name: r2
+    privileged: true
+    command: tail -f /dev/null
     networks:
       lanb:
         ipv4_address: 172.20.0.66
@@ -51,15 +53,15 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
-      - SYS_ADMIN
-      - SYS_MODULE  
     volumes:
       - ./configs/r2:/etc/frr
 
   r3:
-    image: frrouting/frr:latest
-    platform: linux/arm64 
+    image: arm64v8/ubuntu:22.04
+    platform: linux/arm64
     container_name: r3
+    privileged: true
+    command: tail -f /dev/null
     networks:
       lanc:
         ipv4_address: 172.20.0.98
@@ -68,8 +70,6 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
-      - SYS_ADMIN    
-      - SYS_MODULE  
     volumes:
       - ./configs/r3:/etc/frr
 

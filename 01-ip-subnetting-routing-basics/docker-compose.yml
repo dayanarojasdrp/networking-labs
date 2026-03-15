@@ -2,65 +2,74 @@ networks:
   lana:
     ipam:
       config:
-        - subnet: 10.10.0.0/26
+        - subnet: 172.20.0.0/26
   lanb: 
     ipam:
       config:
-        - subnet: 10.10.0.64/27
+        - subnet: 172.20.0.64/27
   lanc: 
     ipam:
       config:
-        - subnet: 10.10.0.96/28
+        - subnet: 172.20.0.96/28
   r1_r2: 
     ipam:
       config:
-        - subnet: 10.10.0.112/30
+        - subnet: 172.20.0.112/29
   r2_r3: 
     ipam:
       config:
-        - subnet: 10.10.0.116/30
+        - subnet: 172.20.0.128/29
 services:
   r1:
     image: frrouting/frr:latest
+    platform: linux/arm64 
     container_name: r1
     networks:
       lana:
-        ipv4_address: 10.10.0.1
+        ipv4_address: 172.20.0.2
       r1_r2:
-        ipv4_address: 10.10.0.113
+        ipv4_address: 172.20.0.114
     cap_add:
       - NET_ADMIN
       - NET_RAW
+      - SYS_ADMIN
+      - SYS_MODULE  
     volumes:
       - ./configs/r1:/etc/frr
 
   r2:
     image: frrouting/frr:latest
+    platform: linux/arm64 
     container_name: r2
     networks:
       lanb:
-        ipv4_address: 10.10.0.65
+        ipv4_address: 172.20.0.66
       r1_r2:
-        ipv4_address: 10.10.0.114
+        ipv4_address: 172.20.0.115
       r2_r3:
-        ipv4_address: 10.10.0.117
+        ipv4_address: 172.20.0.130
     cap_add:
       - NET_ADMIN
       - NET_RAW
+      - SYS_ADMIN
+      - SYS_MODULE  
     volumes:
       - ./configs/r2:/etc/frr
 
   r3:
     image: frrouting/frr:latest
+    platform: linux/arm64 
     container_name: r3
     networks:
       lanc:
-        ipv4_address: 10.10.0.97
+        ipv4_address: 172.20.0.98
       r2_r3:
-        ipv4_address: 10.10.0.118
+        ipv4_address: 172.20.0.131
     cap_add:
       - NET_ADMIN
       - NET_RAW
+      - SYS_ADMIN    
+      - SYS_MODULE  
     volumes:
       - ./configs/r3:/etc/frr
 

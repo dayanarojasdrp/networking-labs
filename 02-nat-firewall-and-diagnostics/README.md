@@ -22,7 +22,7 @@ This lab simulates a real-world scenario where an internal network is protected 
 
 ### Rule applied on R2
 ```
-iptables -t nat -A POSTROUTING -s 172.20.0.0/26 -o eth1 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 172.20.0.0/26 -o eth0 -j MASQUERADE
 ```
 
 ### Explanation
@@ -42,7 +42,7 @@ curl http://example.com
 
 ### Rule applied on R2
 ```
-iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 8080 -j DNAT --to-destination 172.20.0.70:80
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8080 -j DNAT --to-destination 172.20.0.70:80
 ```
 
 ### Explanation
@@ -84,7 +84,7 @@ iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 ### tcpdump – Packet Capture
 ```
-tcpdump -ni eth1 tcp port 8080
+tcpdump -ni eth0 tcp port 8080
 ```
 Used to verify that traffic reaches R2 and is forwarded correctly.
 

@@ -1,15 +1,21 @@
+frr version 8.1
 frr defaults traditional
-hostname R2
+hostname 818a146e9b6e
+no ipv6 forwarding
 service integrated-vtysh-config
-
-interface eth0
- ip address 172.20.0.115/29
-
-interface eth1
- ip address 172.20.0.130/29
-
-interface eth2
- ip address 172.20.0.66/27
-
+!
 ip route 172.20.0.0/26 172.20.0.114
 ip route 172.20.0.96/28 172.20.0.131
+!
+interface eth0
+ ip address 172.20.0.115/29
+exit
+!
+interface eth1
+ ip address 172.20.0.130/29
+exit
+!
+interface eth2
+ ip address 172.20.0.66/27
+exit
+!

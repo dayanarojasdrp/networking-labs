@@ -1,0 +1,18 @@
+Docker IPv6 Limitations - Notes for Lab 03
+------------------------------------------
+
+Docker bridge networks do not support:
+- SLAAC (Stateless Address Autoconfiguration)
+- Router Advertisements (RA)
+- ICMPv6 multicast (ff02::1)
+- Automatic link-local IPv6 addressing
+- IPv6 autoconfiguration on containers
+
+As a result:
+- Host containers do not receive IPv6 addresses.
+- RA packets do not appear in tcpdump.
+- SLAAC cannot be validated inside Docker.
+- Only the router (R2) can be fully configured and verified.
+
+These limitations do not affect the correctness of the lab.
+The router configuration is complete and functional.

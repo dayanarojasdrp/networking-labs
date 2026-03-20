@@ -23,7 +23,7 @@ Due to Docker limitations, SLAAC cannot be validated on host containers, but the
 ## 3. Topology
 
 ```
-LAN A (172.20.0.64/27)
+LAN B (172.20.0.64/27)
         |
       [ R2 ]
         |

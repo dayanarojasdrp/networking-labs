@@ -1,4 +1,4 @@
-#  Networking Junior+ Labs
+#  Networking  Labs
 
 This repository contains a comprehensive, hands-on networking lab series designed to demonstrate practical and theoretical knowledge across modern networking, cloud, DevOps, and Kubernetes environments.
 

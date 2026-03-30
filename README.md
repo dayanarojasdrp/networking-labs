@@ -122,7 +122,7 @@ It includes:
 │       ├── router1.conf
 │       └── router2.conf
 └── docs
-    └── global-diagram.drawio
+    └── global-diagram.png
 ```
 Each lab includes:
 

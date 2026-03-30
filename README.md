@@ -27,6 +27,7 @@ It includes:
 ---
 
 ##  Repository Structure
+```
 .
 ├── 01-ip-subnetting-routing-basics
 │   ├── README.md
@@ -122,7 +123,7 @@ It includes:
 │       └── router2.conf
 └── docs
     └── global-diagram.drawio
-
+```
 Each lab includes:
 
 -  Documentation (README)

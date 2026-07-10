@@ -1,174 +1,398 @@
-
 # Networking Labs Portfolio
 
-A comprehensive, hands-on networking lab portfolio demonstrating practical and theoretical expertise across modern networking, cloud infrastructure, DevOps, and Kubernetes environments.
+Hands-on networking lab portfolio focused on **routing, subnetting, NAT, firewall rules, TLS, cloud networking, Kubernetes networking, SDN/BGP fundamentals, and troubleshooting**.
 
-This repository showcases real-world scenarios, from fundamental networking concepts to advanced topics such as TLS, SDN, and BGP.
+This repository was created to strengthen practical networking knowledge for DevOps, Cloud Engineering, Infrastructure, and Kubernetes-related roles.
+
+The goal is to show how different networking concepts connect across traditional infrastructure, cloud environments, and containerized platforms.
 
 ---
 
-## Overview
+## What This Project Demonstrates
 
-This project was developed as a complete learning and demonstration environment to simulate real-world networking scenarios under practical conditions.
+This repository demonstrates practical and theoretical understanding of:
 
-It covers:
-
-- IP addressing and subnetting (VLSM)
+- IP addressing and subnetting
+- VLSM design
 - Static routing
-- NAT (SNAT, DNAT, PAT)
-- Firewall configuration (iptables)
-- IPv6 and dual-stack networking
-- Cloud networking design (AWS, Azure, GCP)
-- Kubernetes networking (CNI, Services, Ingress, Network Policies)
-- Security concepts (TLS, SSL termination, PFS, STARTTLS)
-- SDN (Software Defined Networking)
-- BGP fundamentals (FRR, ASN, routing exchange)
-- Network troubleshooting tools (nmap, tcpdump, curl, traceroute)
+- NAT: SNAT, DNAT, and PAT
+- Firewall rules with iptables
+- IPv6 and dual-stack concepts
+- Cloud networking fundamentals
+- Kubernetes networking concepts
+- Services, Ingress, and Network Policies
+- TLS and HTTPS basics
+- Reverse proxy concepts
+- SDN fundamentals
+- BGP fundamentals with FRRouting
+- Network troubleshooting tools and workflows
+
+---
+
+## Global Diagram
+
+![Global Networking Diagram](docs/global-diagram.png)
+
+This diagram summarizes the general networking concepts explored across the labs.
 
 ---
 
 ## Repository Structure
 
+```text
+networking-labs/
+├── 01-ip-subnetting-routing-basics/
+├── 02-nat-firewall-and-diagnostics/
+├── 03-ipv6-and-dual-stack/
+├── 04-cloud-networking/
+├── 05-kubernetes-networking/
+├── 06-security-and-tls/
+├── 07-sdn-and-bgp/
+├── docs/
+│   └── global-diagram.png
+└── README.md
 ```
 
-.
-├── 01-ip-subnetting-routing-basics
-├── 02-nat-firewall-and-diagnostics
-├── 03-ipv6-and-dual-stack
-├── 04-cloud-networking
-├── 05-kubernetes-networking
-├── 06-security-and-tls
-├── 07-sdn-and-bgp
-└── docs
-
-```
-
-Each lab includes:
-
-- Documentation (README)
-- Configurations
-- Diagrams
-- Practical examples
+Each lab includes documentation, configurations, diagrams, or practical examples related to a specific networking area.
 
 ---
 
-## Labs Breakdown
+## Lab Breakdown
 
-### Lab 01 – IP, Subnetting and Routing
+## Lab 01 — IP, Subnetting and Routing
+
+Focus:
+
+- IPv4 addressing
+- Subnetting
 - VLSM exercises
-- Static routing with multiple routers (FRR)
-- Network testing (ping, traceroute, ARP)
+- Static routing
+- Multi-router communication
+- Basic traffic flow validation
+
+Tools and concepts:
+
+- `ping`
+- `traceroute`
+- ARP
+- routing tables
+- FRRouting concepts
 
 ---
 
-### Lab 02 – NAT, Firewall and Diagnostics
-- SNAT, DNAT, PAT implementation
+## Lab 02 — NAT, Firewall and Diagnostics
+
+Focus:
+
+- SNAT
+- DNAT
+- PAT
 - iptables firewall rules
-- Troubleshooting using:
-  - nmap
-  - tcpdump
-  - curl
-  - netstat
+- traffic filtering
+- packet flow troubleshooting
+
+Tools and concepts:
+
+- `iptables`
+- `nmap`
+- `tcpdump`
+- `curl`
+- `netstat`
+- connection testing
 
 ---
 
-### Lab 03 – IPv6 and Dual Stack
-- IPv4 + IPv6 configuration
-- SLAAC and Router Advertisements
+## Lab 03 — IPv6 and Dual Stack
+
+Focus:
+
+- IPv6 addressing
+- IPv4 and IPv6 coexistence
+- dual-stack networking
+- SLAAC concepts
+- Router Advertisements
 - Neighbor Discovery Protocol
 
----
-
-### Lab 04 – Cloud Networking
-- AWS, Azure, GCP architecture
-- Public and private subnets
-- Route tables and gateways
-- Load balancing and VPC peering
+This lab documents IPv6 fundamentals and how IPv6 differs from traditional IPv4 workflows.
 
 ---
 
-### Lab 05 – Kubernetes Networking
+## Lab 04 — Cloud Networking
+
+Focus:
+
+- Cloud network design
+- AWS, Azure, and GCP networking concepts
+- public and private subnets
+- route tables
+- gateways
+- load balancing
+- VPC peering concepts
+
+This lab connects traditional networking knowledge with cloud infrastructure design.
+
+---
+
+## Lab 05 — Kubernetes Networking
+
+Focus:
+
+- Kubernetes networking model
 - CNI fundamentals
-- Services (ClusterIP, NodePort)
-- Ingress routing (/api, /web)
-- Network Policies (traffic control between pods)
+- Pod-to-pod communication
+- Services
+- ClusterIP
+- NodePort
+- Ingress routing
+- Network Policies
+
+This lab demonstrates how Kubernetes abstracts and manages service-to-service communication.
 
 ---
 
-### Lab 06 – Security and TLS
+## Lab 06 — Security and TLS
+
+Focus:
+
 - Nginx reverse proxy
-- HTTPS with self-signed certificates
-- SSL termination
-- TLS handshake validation using OpenSSL
+- HTTPS
+- self-signed certificates
+- TLS termination
+- basic TLS validation
+- secure entry point concepts
+
+Tools and concepts:
+
+- Nginx
+- OpenSSL
+- HTTPS testing
+- reverse proxy architecture
 
 ---
 
-### Lab 07 – SDN and BGP
-- Traditional vs SDN vs VPC networking models
-- Control Plane vs Data Plane
+## Lab 07 — SDN and BGP
+
+Focus:
+
+- traditional networking vs SDN
+- control plane vs data plane
 - OpenFlow fundamentals
-- BGP simulation using FRR (multi-AS routing and exchange)
+- BGP concepts
+- ASN
+- route exchange
+- FRRouting simulation ideas
+
+This lab introduces higher-level networking concepts useful for understanding modern infrastructure and cloud networking design.
 
 ---
 
 ## Key Skills Demonstrated
 
-- Network design and segmentation
-- Routing and traffic flow analysis
-- Infrastructure-level security (firewall + TLS)
-- Service exposure (NodePort, Ingress)
-- Reverse proxy architecture
-- Distributed systems networking
-- Troubleshooting and diagnostics
-- Cloud and container networking concepts
+| Area | Skills |
+|---|---|
+| Routing | Static routing, routing tables, traffic path analysis |
+| Addressing | IPv4, IPv6, subnetting, VLSM |
+| NAT | SNAT, DNAT, PAT concepts |
+| Firewalling | iptables rules, filtering, access control |
+| Cloud Networking | VPC design, subnets, gateways, route tables |
+| Kubernetes Networking | Services, Ingress, CNI, Network Policies |
+| Security | TLS, HTTPS, reverse proxy, secure entry points |
+| Troubleshooting | tcpdump, nmap, curl, traceroute, ping |
+| Advanced Concepts | SDN, BGP, FRR, control plane/data plane |
 
 ---
 
-## Tools & Technologies
+## Tools and Technologies
 
 - Docker
-- FRRouting (FRR)
+- Linux networking tools
+- FRRouting
 - Nginx
 - iptables
-- tcpdump / nmap / curl
-- Kubernetes (Minikube / Kind)
-- Linux networking tools
+- tcpdump
+- nmap
+- curl
+- traceroute
+- Kubernetes
+- Kind / Minikube concepts
+- OpenSSL
 
 ---
 
 ## Environment Constraints
 
-This project was developed under constrained conditions:
+This project was developed under constrained conditions, including limited or unstable internet access.
 
-- Limited or unstable internet access
-- Pre-downloaded Docker images for offline use
-- Partial simulation of certain cloud environments
+Because of that, some labs prioritize:
 
-Despite these limitations, all concepts were implemented, tested, or documented to reflect realistic behavior.
+- local simulation
+- offline-friendly documentation
+- pre-downloaded images
+- conceptual diagrams
+- command-based validation
+- reproducible learning workflows
+
+These constraints helped reinforce how to design and troubleshoot systems without relying only on managed cloud services.
+
+---
+
+## Evidence
+
+Current visual evidence is available in:
+
+```text
+docs/
+```
+
+| Evidence | File |
+|---|---|
+| Global networking diagram | [docs/global-diagram.png](docs/global-diagram.png) |
+
+This repository is mainly a lab portfolio and documentation hub. More command-output evidence can be added over time to strengthen validation.
+
+---
+
+## Recommended Evidence to Add Later
+
+To make this repository stronger for recruiters, future evidence could include:
+
+```bash
+ip route
+```
+
+```bash
+iptables -S
+```
+
+```bash
+docker network ls
+```
+
+```bash
+docker ps
+```
+
+```bash
+kubectl get svc
+```
+
+```bash
+kubectl get pods -o wide
+```
+
+```bash
+curl -v <service-url>
+```
+
+```bash
+tcpdump -i <interface>
+```
+
+Suggested evidence files:
+
+```text
+docs/evidence/ip-routes.txt
+docs/evidence/iptables-rules.txt
+docs/evidence/docker-networks.txt
+docs/evidence/kubernetes-services.txt
+docs/evidence/curl-connectivity-test.txt
+docs/evidence/tcpdump-sample.txt
+```
 
 ---
 
 ## Purpose
 
-This repository was created to strengthen practical networking skills and simulate real-world infrastructure scenarios aligned with DevOps and Cloud Engineering roles.
+This repository was created to build a stronger foundation in networking for DevOps and Cloud Engineering.
+
+Networking is essential for understanding:
+
+- how applications communicate
+- how cloud infrastructure is designed
+- how Kubernetes services expose workloads
+- how firewalls and NAT affect traffic
+- how TLS protects communication
+- how routing decisions affect availability
+- how to troubleshoot connectivity issues
 
 ---
 
-## Conclusion
+## Current Limitations
 
-This project demonstrates the ability to:
+This repository is a networking lab portfolio, not a production network implementation.
 
-- Design and implement network architectures
-- Secure communication channels
-- Troubleshoot complex networking issues
-- Understand modern cloud-native networking environments
+Current limitations:
+
+- Some cloud networking sections are conceptual
+- Some labs are documented simulations rather than full cloud deployments
+- Limited command-output evidence is currently included
+- No automated validation scripts yet
+- No packet capture evidence yet
+- No full CI/CD validation for configurations
+
+These limitations are intentional for the current scope of the project.
 
 ---
 
-## Author
+## Future Improvements
 
-Dayana Rojas  
-Computer Science Student  
+Potential improvements:
+
+- Add command-output evidence for each lab
+- Add packet capture examples with tcpdump
+- Add more diagrams for each networking layer
+- Add Docker Compose network simulations
+- Add Kubernetes NetworkPolicy validation with Calico or Cilium
+- Add AWS VPC implementation examples
+- Add automated validation scripts
+- Add troubleshooting runbooks
+- Add before/after connectivity test evidence
+
+---
+
+## Lessons Learned
+
+This project helped reinforce several networking concepts:
+
+- Routing controls where traffic goes.
+- NAT changes how traffic is seen across network boundaries.
+- Firewalls must match the real traffic path.
+- Kubernetes networking simplifies service discovery but adds abstraction.
+- TLS termination is an important part of secure service exposure.
+- Cloud networking builds on traditional networking fundamentals.
+- Troubleshooting requires checking each layer separately.
+- Diagrams make infrastructure easier to reason about.
+
+---
+
+## Why This Project Matters
+
+This project supports DevOps and Cloud Engineering foundations by connecting traditional networking with modern infrastructure.
+
+```text
+Subnetting
+   ↓
+Routing
+   ↓
+NAT
+   ↓
+Firewalling
+   ↓
+TLS
+   ↓
+Cloud Networking
+   ↓
+Kubernetes Networking
+   ↓
+Troubleshooting
 ```
 
+A strong understanding of networking makes it easier to debug infrastructure, deploy applications, secure services, and understand cloud-native platforms.
+
 ---
+
+## Final Notes
+
+This repository is part of my DevOps, Cloud, Networking, and Infrastructure learning portfolio.
+
+It documents hands-on networking practice across traditional, cloud, and Kubernetes environments, with a focus on practical understanding, troubleshooting, and infrastructure reasoning.
